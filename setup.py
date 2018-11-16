@@ -2,27 +2,15 @@ from __future__ import print_function
 import sys, codecs
 from setuptools import setup, find_packages
 
+
 with open('requirements.txt') as f:
     INSTALL_REQUIRES = [l.strip() for l in f.readlines() if l]
-
-
-try:
-    import numpy
-except ImportError:
-    print('numpy is required during installation')
-    sys.exit(1)
-
-try:
-    import scipy
-except ImportError:
-    print('scipy is required during installation')
-    sys.exit(1)
 
 with codecs.open('README.rst', encoding='utf-8-sig') as f:
     LONG_DESCRIPTION = f.read()
 
 setup(name='seglearn',
-      version='1.0.2',
+      version='1.0.2p0',
       description='Machine Learning Time Series',
       author='David Burns',
       packages=find_packages(),
